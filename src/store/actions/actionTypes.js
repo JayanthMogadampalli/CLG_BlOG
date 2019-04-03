@@ -1,12 +1,12 @@
 export const ADD_POST_START = 'ADD_POST_START';
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
 export const ADD_POST_FAIL = 'ADD_POST_FAIL';
-export const ADD_INIT = 'ADD_INIT';
+export const POST_INIT = 'ADD_INIT';
 
 
 export const FETCH_POSTS_START = 'FETCH_POSTS_START';
-export const FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
-export const FETCH_ORDERS_FAIL = 'FETCH_ORDERS_FAIL';
+export const FETCH_POSTS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
+export const FETCH_POSTS_FAIL = 'FETCH_ORDERS_FAIL';
 
 export const AUTH_START = 'AUTH_START';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';

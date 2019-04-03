@@ -23,6 +23,6 @@ const NewPost = () => {
     </Form.Field>
     </Form>
     </Segment>
-};
+}
 
 export default NewPost;

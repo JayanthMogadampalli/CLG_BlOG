@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-orders';
 
-export const addPostSuccess = ( post, postData ) => {
+export const addPostSuccess = ( id, postData ) => {
     return {
         type: actionTypes.ADD_POST_SUCCESS,
         postId: id,
@@ -11,7 +11,7 @@ export const addPostSuccess = ( post, postData ) => {
 
 export const addPostFail = ( error ) => {
     return {
-        type: actionTypes._FAIL,
+        type: actionTypes.ADD_POST_FAIL,
         error: error
     };
 }
@@ -36,49 +36,49 @@ export const addPost = ( postData, token ) => {
     };
 };
 
-export const purchaseInit = () => {
+export const addInit = () => {
     return {
-        type: actionTypes.PURCHASE_INIT
+        type: actionTypes.POST_INIT
     };
 };
 
-export const fetchOrdersSuccess = ( orders ) => {
+export const fetchPostsSuccess = ( orders ) => {
     return {
-        type: actionTypes.FETCH_ORDERS_SUCCESS,
+        type: actionTypes.FETCH_POSTS_SUCCESS,
         orders: orders
     };
 };
 
-export const fetchOrdersFail = ( error ) => {
+export const fetchPostsFail = ( error ) => {
     return {
-        type: actionTypes.FETCH_ORDERS_FAIL,
+        type: actionTypes.FETCH_POSTS_FAIL,
         error: error
     };
 };
 
-export const fetchOrdersStart = () => {
+export const fetchPostsStart = () => {
     return {
-        type: actionTypes.FETCH_ORDERS_START
+        type: actionTypes.FETCH_POSTS_START
     };
 };
 
-export const fetchOrders = (token, userId) => {
+export const fetchPosts = (token) => {
     return dispatch => {
-        dispatch(fetchOrdersStart());
-        const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
-        axios.get( '/orders.json' + queryParams)
+        dispatch(fetchPostsStart());
+        const queryParams = '?auth=' + token;
+        axios.get( '/posts.json' + queryParams)
             .then( res => {
-                const fetchedOrders = [];
+                const fetchedPosts = [];
                 for ( let key in res.data ) {
-                    fetchedOrders.push( {
+                    fetchedPosts.push( {
                         ...res.data[key],
                         id: key
                     } );
                 }
-                dispatch(fetchOrdersSuccess(fetchedOrders));
+                dispatch(fetchPostsSuccess(fetchedPosts));
             } )
             .catch( err => {
-                dispatch(fetchOrdersFail(err));
+                dispatch(fetchPostsFail(err));
             } );
     };
 };

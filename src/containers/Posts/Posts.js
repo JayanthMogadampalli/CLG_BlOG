@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Post from '../../components/Post/Post';
-import axios from '../../axios-orders';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../Spinner/Spinner';
 
@@ -19,7 +18,8 @@ class Posts extends Component {
                     key={post.id}
                     description={post.description}
                     company={post.company}
-                    image={post.image} />
+                    image={post.image}
+                     />
             ) )
         }
         return (

@@ -9,7 +9,7 @@ const Post = (props) => {
   return(
     <div className={classes.Post}>
     <Container>
-    <Segment>
+    <Segment top attached>
     <Item>
     <Item.Image size='medium' src='https://react.semantic-ui.com/images/wireframe/image.png' centered rounded/>
     <Item.Header as='a'>{props.title}</Item.Header>
@@ -19,10 +19,10 @@ const Post = (props) => {
     <Item.Description>
       {props.description}
   </Item.Description>
-    <Button basic color='orange'>Orange</Button>
-    <Button basic color='red'>Red</Button>
-  </Item>
-    </Segment>
+    <Button basic color='orange' onClick={props.edit}>Edit</Button>
+    <Button basic color='red' onclick={props.delete}>Delete</Button>
+     </Item>
+  </Segment>
    
 </Container>
 </div>    
