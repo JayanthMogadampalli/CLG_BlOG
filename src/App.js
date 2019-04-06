@@ -8,6 +8,7 @@ import Logout from './containers/Auth/Logout/Logout';
 import NewPost from './containers/NewPost/NewPost';
 import Auth from './containers/Auth/Auth';
 import Posts from './containers/Posts/Posts';
+import Profile from './containers/Profile/Profile';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import * as actions from './store/actions/index';
 

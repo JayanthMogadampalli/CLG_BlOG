@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Post from '../../components/Post/Post';
 import * as actions from '../../store/actions/index';
-import Spinner from '../../Spinner/Spinner';
+import Spinner from '../../components/Spinner/Spinner';
 
 class Posts extends Component {
     componentDidMount () {

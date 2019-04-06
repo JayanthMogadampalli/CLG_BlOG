@@ -1,0 +1,17 @@
+.container{
+    flex-direction:column;
+}
+.spac{
+    margin-right:80px;
+}
+
+.bspac{
+    margin-bottom:30px;
+}
+.bdark{
+    border-bottom:5px; 
+}
+
+.cfont{
+    font-weight: bold;
+}
